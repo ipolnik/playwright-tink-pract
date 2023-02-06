@@ -3,7 +3,13 @@ import test, { chromium } from "@playwright/test";
 test.describe("launch browser", () => {
   test("Open leetcode", async () => {
     const browser = await chromium.launch({ headless: false });
-    const context = await browser.newContext();
+    const context = await browser.newContext({recordVideo: {
+      dir: "../video/",
+      size: {
+        width: 800,
+        height: 600
+      }
+    }});
     const page = await context.newPage();
     await page.goto("https://letcode.in/");
     await page.click("text=Log in")
