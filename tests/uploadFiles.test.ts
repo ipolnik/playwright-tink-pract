@@ -27,6 +27,6 @@ test.describe("Upload file", ()=> {
              await fileChooser.setFiles([videoA, videoB])
         })
         await page.click("#drag-drop-upload", {force: true})
-        
+        await page.waitForTimeout(4000)
     })
 })
