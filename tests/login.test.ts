@@ -1,4 +1,5 @@
 import test, { chromium } from "@playwright/test";
+import dataLogin from "../test-data/test-data";
 
 test.describe("launch browser", () => {
   test("Open leetcode", async () => {
@@ -13,8 +14,8 @@ test.describe("launch browser", () => {
     const page = await context.newPage();
     await page.goto("https://letcode.in/");
     await page.click("text=Log in")
-    await page.fill("input[name=email]", "koushik350@gmail.com")
-    await page.fill("input[name=password]", "Pass123$")
+    await page.fill("input[name=email]", dataLogin.nameF)
+    await page.fill("input[name=password]", dataLogin.nameL)
     await page.click(`button:text("LOGIN")`)
     await page.click(`"Sign out"`)
     await browser.close();
