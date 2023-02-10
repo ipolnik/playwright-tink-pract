@@ -4,5 +4,6 @@
         "strict": true,
         "module": "commonjs",
         "sourceMap": true,
+        "resolveJsonModule" : true
     }
 }
