@@ -22,7 +22,6 @@ test.describe('TC001', () => {
         context = await browser.newContext();
         page = await context.newPage();
         await page.goto(Env.testUrl);
-
         header = new Header(page);
         login = new LoginPage(page);
         commonFunc = new CommonFunctoins(page);
@@ -38,7 +37,6 @@ test.describe('TC001', () => {
         test.expect(await toaster?.textContent()).toContain("Welcome");
         await header.clickSignOutLink();
     })
-    
     
     test.afterAll(async () => {
         await page.waitForTimeout(3000)
