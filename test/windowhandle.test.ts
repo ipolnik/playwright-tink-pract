@@ -41,8 +41,6 @@ test.describe('handle inputs', () => {
         })
         
     })
-    
-    
 
     test.afterAll(async () => {
         page.close();

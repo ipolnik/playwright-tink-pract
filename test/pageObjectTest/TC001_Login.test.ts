@@ -17,8 +17,7 @@ test.describe('TC001', () => {
     let commonFunc : CommonFunctoins;
 
     test.beforeAll (async () => {
-        browser = await chromium.launch({headless:false,
-        channel: "chrome"})
+        browser = await chromium.launch({headless:false })
         context = await browser.newContext();
         page = await context.newPage();
         await page.goto(Env.testUrl);
@@ -28,7 +27,7 @@ test.describe('TC001', () => {
     })
     
     test('Login positive_JIRA101', async () => {
-        test.expect(page.url()).toBe("https://letcode.in/")
+        test.expect(page.url()).toBe("https://letcode.com/")
         await header.clickLoginLink();
         await login.enterUserName(data.email);
         await login.enterUserPassword(data.password);
